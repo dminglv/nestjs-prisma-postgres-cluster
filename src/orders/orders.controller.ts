@@ -27,7 +27,7 @@ export class OrdersController {
     ordersDocs.getOrdersListDoc.ApiTooManyRequestsResponse,
   )
   @Get()
-  async getOrdersList(): Promise<{ orders: orders }> {
+  async getOrdersList(): Promise<{ orders: orders[] }> {
     return await this.ordersService.getOrdersList();
   }
 
