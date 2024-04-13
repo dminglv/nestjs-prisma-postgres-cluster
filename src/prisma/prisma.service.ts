@@ -1,7 +1,6 @@
 import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
 import { readReplicas } from '@prisma/extension-read-replicas';
-import * as process from 'node:process';
 
 const createPrismaExtended = (prisma: PrismaService, url: string) =>
   prisma.$extends(
