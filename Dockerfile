@@ -10,7 +10,6 @@ COPY --chown=node:node package*.json yarn.lock ./
 RUN yarn install --frozen-lockfile --production=false
 
 COPY --chown=node:node . .
-COPY --chown=node:node src/prisma/schema.prisma ./src/prisma/schema.prisma
 
 RUN npx prisma generate --schema=src/prisma/schema.prisma
 RUN yarn build
