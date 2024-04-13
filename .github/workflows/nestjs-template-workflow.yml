@@ -1,7 +1,7 @@
 name: NestJS template workflow
 on: [ push ]
 env:
-  SERVICE_NAME: nestjs-template
+  SERVICE_NAME: nestjs-prisma-postgres-cluster
 jobs:
   Build:
     runs-on: ubuntu-latest
@@ -16,6 +16,8 @@ jobs:
           check-latest: true
       - name: Install Dependencies
         run: yarn
+      - name: Prisma generate schema
+        run: npx prisma generate --schema=src/prisma/schema.prisma
       - name: Build
         run: yarn build
       # Build & Publish a Docker Image | Main Branch Only
