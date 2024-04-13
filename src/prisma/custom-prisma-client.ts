@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client';
 import { readReplicas } from '@prisma/extension-read-replicas';
-import * as process from 'node:process';
 
 export const customPrismaClient = (prismaClient: PrismaClient) => {
   return prismaClient.$extends(
