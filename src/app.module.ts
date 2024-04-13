@@ -4,6 +4,7 @@ import { APP_GUARD } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
 import Joi from 'joi';
 
+import { PrismaModule } from './prisma/prisma.module';
 import { OrdersModule } from './orders/orders.module';
 
 import { AppController } from './app.controller';
@@ -27,6 +28,7 @@ import { ThrottlerBehindProxyGuard } from './common/guards/throttlerProxy.guard'
       }),
     }),
     OrdersModule,
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [
